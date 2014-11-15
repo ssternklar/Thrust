@@ -76,7 +76,7 @@ MonoBehaviour:
   fireDelay: 55
   fireAngle: 0
   increaseAngle: 45
-  increment: 20
+  increment: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
