@@ -20,9 +20,9 @@ public class StarfieldScrolling : MonoBehaviour {
 
         rigidbody2D.MovePosition(rigidbody2D.position - rigidbody2D.velocity);
 
-        if (rigidbody2D.position.y < -screenHeightHalf)
+        if (rigidbody2D.position.y < -screenHeightHalf*2)
         {
-            rigidbody2D.MovePosition(new Vector2(0, screenHeightHalf));
+            rigidbody2D.MovePosition(new Vector2(0, 0));
         }
 	}
 }
