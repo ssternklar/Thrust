@@ -114,7 +114,7 @@ public class ShipMovement : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag != "Player Bullet" && invulnTimer < timer)
+        if (invulnTimer < timer)
         {
             ResetPlayer();
         }
@@ -128,6 +128,11 @@ public class ShipMovement : MonoBehaviour {
         if (lives < 0)
         {
             Application.LoadLevel("Start Screen");
+        }
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            Destroy(bullets[i]);
         }
     }
 }

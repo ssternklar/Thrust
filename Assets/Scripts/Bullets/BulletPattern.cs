@@ -2,7 +2,7 @@
 using System.Collections;
 
 public abstract class BulletPattern : MonoBehaviour {
-
+    public GameObject bullet;
     public GameObject target;
 
     public float timeSinceFire = 0;
@@ -13,5 +13,12 @@ public abstract class BulletPattern : MonoBehaviour {
         //fire();
     }
 
-    public abstract void fire(Vector2 destination);
+    public abstract void fire(Vector2 direction);
+
+
+    public Vector2 calcOffset(Vector2 direction, float angle)
+    {
+        Quaternion rot = Quaternion.Euler(0, 0, angle);
+        return rot * direction;
+    }
 }

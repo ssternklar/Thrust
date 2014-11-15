@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour {
     //Used for curved shots only
     public float angle = 0;
     public float rotationalVelocity = 0;
+    public float bulletSpeed = 5;
 
 	// Use this for initialization
 	void Start () 
@@ -23,20 +24,12 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        if(rotationalVelocity!=0)
-        {
-            angle += rotationalVelocity;
-            target = new Vector2(Mathf.Cos(angle),Mathf.Sin(angle));
-        }
-
-
-        controller.Translate(target*5);
+        controller.Translate(target*bulletSpeed);
 
         if (timeAlive >= lifeTimer)
         {
             controller.Die();
         }
-
         timeAlive += Time.deltaTime;
 	}
 }

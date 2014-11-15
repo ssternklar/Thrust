@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BurstFire : StraightFire {
+public class BurstFire : StarFire {
 
 	// Use this for initialization
 	void Start () 
@@ -19,24 +19,13 @@ public class BurstFire : StraightFire {
 
         if (timeSinceFire >= fireDelay)
         {
-            base.fire(target.rigidbody2D.position);
-            base.fire(calcOffset(target.rigidbody2D.position, true));
-            base.fire(calcOffset(target.rigidbody2D.position, false));
+            Vector2 dir = (target.rigidbody2D.position - rigidbody2D.position).normalized;
+            base.fire(dir);
+            base.fire(calcOffset(dir, 45f));
+            base.fire(calcOffset(dir, -45f));
 
             timeSinceFire = 0;
         }
         timeSinceFire++;
 	}
-
-    Vector2 calcOffset(Vector2 position, bool left)
-    {
-        Vector2 off = this.rigidbody2D.position - position;
-        Vector2 perpendicular = new Vector2(-off.y, off.x);
-
-        if (left)
-        {
-            return perpendicular;
-        }
-        return -perpendicular;
-    }
 }
