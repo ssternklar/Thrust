@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4756142f00a6ef4a8c1a9308e926863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 0
+  maxSpeed: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   timeSinceFire: 0
-  fireDelay: 100
+  fireDelay: 200
   bullet: {fileID: 100000, guid: a1281227d3d5de94c92b76c564c447d4, type: 2}
   speed: 0
 --- !u!212 &21200000

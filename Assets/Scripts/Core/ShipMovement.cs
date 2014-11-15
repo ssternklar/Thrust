@@ -129,5 +129,10 @@ public class ShipMovement : MonoBehaviour {
         {
             Application.LoadLevel("Start Screen");
         }
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            Destroy(bullets[i]);
+        }
     }
 }
