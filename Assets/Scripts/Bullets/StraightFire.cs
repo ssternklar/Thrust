@@ -3,8 +3,6 @@ using System.Collections;
 
 public class StraightFire : BulletPattern{
 
-    public GameObject bullet;
-
     public float speed;
 
 	// Use this for initialization
@@ -14,7 +12,7 @@ public class StraightFire : BulletPattern{
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public virtual void Update () 
     {
         if (target == null)
         {
@@ -23,17 +21,16 @@ public class StraightFire : BulletPattern{
 
         if (timeSinceFire >= fireDelay)
         {
-            fire(target.rigidbody2D.position);
+            fire(target.rigidbody2D.position - rigidbody2D.position);
             timeSinceFire = 0;
         }
         timeSinceFire++;
 	}
 
-    public override void fire(Vector2 destination)
+    public override void fire(Vector2 direction)
     {
-            Vector2 pos = this.rigidbody2D.position;
-            Quaternion rot = Quaternion.identity;
-            Bullet shell = ((GameObject)Instantiate(bullet, pos, rot)).GetComponent<Bullet>();
-            shell.target = (destination - shell.rigidbody2D.position).normalized;
+        Quaternion rot = Quaternion.identity;
+        Bullet shell = ((GameObject)Instantiate(bullet, rigidbody2D.position, rot)).GetComponent<Bullet>();
+        shell.target = direction.normalized;
     }
 }
