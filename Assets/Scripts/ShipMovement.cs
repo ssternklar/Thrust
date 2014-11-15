@@ -24,8 +24,8 @@ public class ShipMovement : MonoBehaviour {
             position /= Input.touchCount;
             position += offset;
 
-            float maxLeft = Camera.main.orthographicSize * Camera.main.aspect - controller.SpriteHalfWidth;
-            float maxTop = Camera.main.orthographicSize - controller.SpriteHalfHeight;
+            float maxLeft =  - controller.SpriteHalfWidth;
+            float maxTop =  - controller.SpriteHalfHeight;
             if (position.x > maxLeft)
             {
                 position.x = maxLeft;
@@ -49,8 +49,8 @@ public class ShipMovement : MonoBehaviour {
         {
             Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             position += offset;
-            float maxLeft = Camera.main.orthographicSize * Camera.main.aspect - controller.SpriteHalfWidth;
-            float maxTop = Camera.main.orthographicSize - controller.SpriteHalfHeight;
+            float maxLeft = GameManager.SharedManager.screenWidth - controller.SpriteHalfWidth;
+            float maxTop = GameManager.SharedManager.screenHeight - controller.SpriteHalfHeight;
             if (position.x > maxLeft)
             {
                 position.x = maxLeft;
@@ -59,7 +59,7 @@ public class ShipMovement : MonoBehaviour {
             {
                 position.x = -maxLeft;
             }
-            else if (position.y > maxTop)
+            if (position.y > maxTop)
             {
                 position.y = maxTop;
             }
