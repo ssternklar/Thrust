@@ -4,19 +4,25 @@ using System.Collections;
 public class StarfieldScrolling : MonoBehaviour {
 
     public float Speed = 0;
+    private float screenHeightHalf;
 
 	// Use this for initialization
 	void Start () {
-        rigidbody.velocity = new Vector2(0, Speed);
+
+        screenHeightHalf = Camera.main.orthographicSize;
+        rigidbody2D.velocity = new Vector2(0, Speed);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        rigidbody.MovePosition(rigidbody.position + rigidbody.velocity);
-        
-        if(rigidbody.position.y > camera.orthographicSize)
+	void Update ()
+    {
+        rigidbody2D.velocity = new Vector2(0, Speed);
+
+        rigidbody2D.MovePosition(rigidbody2D.position - rigidbody2D.velocity);
+
+        if (rigidbody2D.position.y < -screenHeightHalf)
         {
-            rigidbody.MovePosition(new Vector2(rigidbody.position.x, -camera.orthographicSize));
+            rigidbody2D.MovePosition(new Vector2(0, screenHeightHalf));
         }
 	}
 }
