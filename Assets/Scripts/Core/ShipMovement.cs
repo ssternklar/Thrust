@@ -114,7 +114,7 @@ public class ShipMovement : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag != "Player Bullet" && invulnTimer < timer)
+        if (invulnTimer < timer)
         {
             ResetPlayer();
         }
