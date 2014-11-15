@@ -127,7 +127,7 @@ public class ShipMovement : MonoBehaviour {
         timer = 0;
         if (lives < 0)
         {
-            Application.LoadLevel("Start Screen");
+            Application.LoadLevel("End Screen");
         }
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
         for (int i = 0; i < bullets.Length; i++)
