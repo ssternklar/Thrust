@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 8eb0cbb939d92b34b8a87fcb926843ab
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shipSprite: {fileID: 100000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
+  - lifeText: {fileID: 100000, guid: 242501ca37e838049a9cee1e2fbb6054, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
