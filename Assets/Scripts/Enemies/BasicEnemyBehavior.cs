@@ -16,7 +16,7 @@ public class BasicEnemyBehavior : MonoBehaviour {
 	void Update ()
     {
         //Movement
-	    //call alignX on the player prefab
+	    AlignX(GameObject.FindGameObjectWithTag("Player"),32);
 
         //Attacking
         shootTimer -= 1;
