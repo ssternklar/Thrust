@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Controller))]
 public class ShipMovement : MonoBehaviour {
 
+    public int lives = 3;
     public Vector2 offset;
     Controller controller;
 
@@ -70,5 +71,19 @@ public class ShipMovement : MonoBehaviour {
 
             controller.MovePosition(position);
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag != "Player Bullet")
+        {
+            ResetPlayer();
+        }
+    }
+
+    public void ResetPlayer()
+    {
+        rigidbody2D.MovePosition(new Vector2(0, -3.5f));
+        lives--;
     }
 }
