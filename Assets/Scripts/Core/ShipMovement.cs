@@ -44,9 +44,9 @@ public class ShipMovement : MonoBehaviour {
                 }
                 position /= Input.touchCount;
                 position += offset;
-
-                float maxLeft = -controller.SpriteHalfWidth;
-                float maxTop = -controller.SpriteHalfHeight;
+                position = Camera.main.ScreenToWorldPoint(position);
+                float maxLeft = GameManager.SharedManager.screenWidth - controller.SpriteHalfWidth;
+                float maxTop = GameManager.SharedManager.screenHeight - controller.SpriteHalfHeight;
                 if (position.x > maxLeft)
                 {
                     position.x = maxLeft;
@@ -55,7 +55,7 @@ public class ShipMovement : MonoBehaviour {
                 {
                     position.x = -maxLeft;
                 }
-                else if (position.y > maxTop)
+                if (position.y > maxTop)
                 {
                     position.y = maxTop;
                 }
@@ -66,6 +66,7 @@ public class ShipMovement : MonoBehaviour {
 
                 controller.MovePosition(position);
             }
+#if UNITY_EDITOR
             else if (Input.GetMouseButton(0))
             {
                 Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -91,6 +92,7 @@ public class ShipMovement : MonoBehaviour {
 
                 controller.MovePosition(position);
             }
+#endif
         }
     }
 
@@ -107,5 +109,9 @@ public class ShipMovement : MonoBehaviour {
         rigidbody2D.MovePosition(new Vector2(0, -3.5f));
         lives--;
         timer = 0;
+        if (lives < 0)
+        {
+            Application.LoadLevel("Start Screen");
+        }
     }
 }
