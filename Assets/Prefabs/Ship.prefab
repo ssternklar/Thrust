@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   offset: {x: 0, y: 0}
-  invulnTimer: 0
+  invulnTimer: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4756142f00a6ef4a8c1a9308e926863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 10
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
