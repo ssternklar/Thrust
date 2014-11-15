@@ -210,7 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85a2f59b317c0c488b58de30d5fae5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 3
   offset: {x: 0, y: 0}
+  invulnTimer: 1
 --- !u!114 &622674789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4756142f00a6ef4a8c1a9308e926863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: {x: 0, y: 0}
-  maxSpeed: 1
+  maxSpeed: 10
 --- !u!50 &622674790
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 622674787}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .319999993, y: .319999993}
   m_Center: {x: 0, y: 0}
 --- !u!212 &622674792
