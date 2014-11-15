@@ -11,12 +11,19 @@ public class GameManager {
 
     public float screenWidth;
     public float screenHeight;
+    public float lastScore;
 
     private GameManager()
     {
         sharedManager = this;
         screenWidth = Camera.main.orthographicSize * Camera.main.aspect;
         screenHeight = Camera.main.orthographicSize;
+        lastScore = 0;
+    }
+
+    public void ResetScore()
+    {
+        lastScore = 0;
     }
 	
 }

@@ -28,11 +28,11 @@ public class ShipMovement : MonoBehaviour {
             //renderer.enabled = (int)(timer / Time.fixedDeltaTime) % 2 == 0;
             if(flashTimer<5)
             {
-                renderer.color = Color.cyan;
+                renderer.color = Color.white;
             }
             else
             {
-                renderer.color = Color.white;
+                renderer.color = Color.red;
                 if(flashTimer>10)
                 {
                     flashTimer = 0;
