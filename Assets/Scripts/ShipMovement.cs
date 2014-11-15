@@ -24,24 +24,23 @@ public class ShipMovement : MonoBehaviour {
             position /= Input.touchCount;
             position += offset;
 
-            if(position.x > Screen.width - controller.SpriteHalfWidth)
+            float maxLeft = Camera.main.orthographicSize * Camera.main.aspect - controller.SpriteHalfWidth;
+            float maxTop = Camera.main.orthographicSize - controller.SpriteHalfHeight;
+            if (position.x > maxLeft)
             {
-                position.x = Screen.width - controller.SpriteHalfWidth;
+                position.x = maxLeft;
             }
-
-            else if(position.y > Screen.height - controller.SpriteHalfHeight)
+            else if (position.x < -maxLeft)
             {
-                position.x = Screen.height - controller.SpriteHalfHeight;
+                position.x = -maxLeft;
             }
-
-            else if(position.x < controller.SpriteHalfWidth)
+            else if (position.y > maxTop)
             {
-                position.x = controller.SpriteHalfWidth;
+                position.y = maxTop;
             }
-
-            else if(position.y < controller.SpriteHalfHeight)
+            else if (position.y < -maxTop)
             {
-                position.y = controller.SpriteHalfHeight;
+                position.y = -maxTop;
             }
 
             controller.MovePosition(position);
