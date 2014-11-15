@@ -3,14 +3,14 @@ using System.Collections;
 
 public abstract class BulletPattern : MonoBehaviour {
 
-    Vector2 target;
+    public GameObject target;
 
+    public float timeSinceFire = 0;
     public float fireDelay;
-    public float timer;
     
     public void Update()
     {
-        timer += Time.deltaTime;
+        fire();
     }
 
     public abstract void fire();
