@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Controller))]
 public class ShipMovement : MonoBehaviour {
 
-    public int lives = 3;
+    public int lives;
     public Vector2 offset;
     Controller controller;
     SpriteRenderer renderer;

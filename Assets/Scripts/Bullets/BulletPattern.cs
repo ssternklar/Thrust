@@ -10,8 +10,8 @@ public abstract class BulletPattern : MonoBehaviour {
     
     public void Update()
     {
-        fire();
+        //fire();
     }
 
-    public abstract void fire();
+    public abstract void fire(Vector2 destination);
 }

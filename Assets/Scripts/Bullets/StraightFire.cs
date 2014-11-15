@@ -16,11 +16,6 @@ public class StraightFire : BulletPattern{
 	// Update is called once per frame
 	void Update () 
     {
-        base.Update();
-	}
-
-    public override void fire()
-    {
         if (target == null)
         {
             target = GameObject.FindWithTag("Player");
@@ -28,14 +23,17 @@ public class StraightFire : BulletPattern{
 
         if (timeSinceFire >= fireDelay)
         {
+            fire(target.rigidbody2D.position);
+            timeSinceFire = 0;
+        }
+        timeSinceFire++;
+	}
+
+    public override void fire(Vector2 destination)
+    {
             Vector2 pos = this.rigidbody2D.position;
             Quaternion rot = Quaternion.identity;
             Bullet shell = ((GameObject)Instantiate(bullet, pos, rot)).GetComponent<Bullet>();
-            shell.target = (target.rigidbody2D.position-shell.rigidbody2D.position).normalized;
-
-            timeSinceFire = 0;
-        }
-
-        timeSinceFire++;
+            shell.target = (destination - shell.rigidbody2D.position).normalized;
     }
 }
