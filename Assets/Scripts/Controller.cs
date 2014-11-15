@@ -4,10 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Controller : MonoBehaviour {
     Sprite sprite;
-    [SerializeField]
-    private Vector2 maxVelocity;
-    [SerializeField]
-    private float maxSpeed;
+    public float maxSpeed;
     public float SpriteHalfWidth
     {
         get { return sprite.bounds.extents.x; }
@@ -16,26 +13,6 @@ public class Controller : MonoBehaviour {
     public float SpriteHalfHeight
     {
         get { return sprite.bounds.extents.y; }
-    }
-
-    public Vector2 MaxVelocity
-    {
-        get { return maxVelocity; }
-        set
-        {
-            maxVelocity = value;
-            maxSpeed = maxVelocity.magnitude;
-        }
-    }
-
-    public float MaxSpeed
-    {
-        get { return maxSpeed; }
-        set
-        {
-            maxSpeed = value;
-            maxVelocity = maxVelocity.normalized * maxSpeed;
-        }
     }
 
 
@@ -53,7 +30,7 @@ public class Controller : MonoBehaviour {
 	//Translates by "velocity" amount
 	public virtual void Translate(Vector2 velocity)
 	{
-		rigidbody2D.MovePosition(rigidbody2D.position + velocity);
+		rigidbody2D.MovePosition((rigidbody2D.position + velocity));
 	}
 	
 	/// <summary>

@@ -7,6 +7,7 @@ public class ShipMovement : MonoBehaviour {
     public int lives = 3;
     public Vector2 offset;
     Controller controller;
+    public float invulnTimer;
 
     public void Start()
     {
