@@ -7,7 +7,7 @@ public class ShipMovement : MonoBehaviour {
     public int lives;
     public Vector2 offset;
     Controller controller;
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
     public float invulnTimer;
     float timer;
     float flashTimer;
@@ -17,7 +17,7 @@ public class ShipMovement : MonoBehaviour {
         flashTimer = 0;
         timer = invulnTimer + 1;
         controller = GetComponent<Controller>();
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Update()
@@ -28,11 +28,11 @@ public class ShipMovement : MonoBehaviour {
             //renderer.enabled = (int)(timer / Time.fixedDeltaTime) % 2 == 0;
             if(flashTimer<5)
             {
-                renderer.color = Color.white;
+                spriteRenderer.color = Color.white;
             }
             else
             {
-                renderer.color = Color.red;
+                spriteRenderer.color = Color.red;
                 if(flashTimer>10)
                 {
                     flashTimer = 0;
@@ -42,7 +42,7 @@ public class ShipMovement : MonoBehaviour {
         else
         {
             //renderer.enabled = true;
-            renderer.color = Color.cyan;
+            spriteRenderer.color = Color.cyan;
         }
     }
 
