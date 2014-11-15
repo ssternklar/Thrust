@@ -25,7 +25,7 @@ public class Placer : MonoBehaviour {
         }
 
         int num = Random.Range(0, objects.Length);
-        Vector2 pos = new Vector2(Random.Range(-(Camera.main.aspect*(Camera.main.orthographicSize))/2,(Camera.main.aspect*(Camera.main.orthographicSize))/2), Camera.main.orthographicSize);//Camera.main.transform.position.x + Random.Range(0, Camera.main.pixelWidth), Camera.main.transform.position.y+Camera.main.pixelHeight + 5);
+        Vector2 pos = new Vector2(Random.Range(-GameManager.SharedManager.screenWidth,GameManager.SharedManager.screenWidth), GameManager.SharedManager.screenHeight);//Camera.main.transform.position.x + Random.Range(0, Camera.main.pixelWidth), Camera.main.transform.position.y+Camera.main.pixelHeight + 5);
         Quaternion rot = Quaternion.Euler(0,0,0);
         Debug.Log(Camera.main.aspect);
 
