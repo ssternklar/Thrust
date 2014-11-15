@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   offset: {x: 0, y: 0}
-  invulnTimer: 1
+  invulnTimer: 1.5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,8 +104,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: eb6c1b74811fd55489d21b2d35451f3e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 458f01eb2c93d8348bae8a373c50d446, type: 3}
+  m_Color: {r: 0, g: .913725495, b: .996078432, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
