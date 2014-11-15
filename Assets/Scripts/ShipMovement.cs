@@ -46,5 +46,30 @@ public class ShipMovement : MonoBehaviour {
 
             controller.MovePosition(position);
         }
+        else if(Input.GetMouseButton(0))
+        {
+            Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            position += offset;
+            float maxLeft = Camera.main.orthographicSize * Camera.main.aspect - controller.SpriteHalfWidth;
+            float maxTop = Camera.main.orthographicSize - controller.SpriteHalfHeight;
+            if (position.x > maxLeft)
+            {
+                position.x = maxLeft;
+            }
+            else if (position.x < -maxLeft)
+            {
+                position.x = -maxLeft;
+            }
+            else if (position.y > maxTop)
+            {
+                position.y = maxTop;
+            }
+            else if (position.y < -maxTop)
+            {
+                position.y = -maxTop;
+            }
+
+            controller.MovePosition(position);
+        }
     }
 }
