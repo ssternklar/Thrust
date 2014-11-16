@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class BulletPattern : MonoBehaviour {
     public GameObject bullet;
     public GameObject target;
-    public Sprite sprite;
+
     public float timeSinceFire = 0;
     public float fireDelay;
     

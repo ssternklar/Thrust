@@ -26,6 +26,8 @@ public class StraightFire : BulletPattern{
 
     public override void fire(Vector2 direction)
     {
-        GameManager.SharedManager.GetBullet(rigidbody2D.position, direction.normalized, sprite);
+        Quaternion rot = Quaternion.identity;
+        Bullet shell = ((GameObject)Instantiate(bullet, rigidbody2D.position, rot)).GetComponent<Bullet>();
+        shell.target = direction.normalized;
     }
 }
