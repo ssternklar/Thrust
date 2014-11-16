@@ -2,18 +2,29 @@
 using System.Collections;
 
 [RequireComponent(typeof(Controller))]
-public class ShipMovement : MonoBehaviour {
+public class ShipMovement : MonoBehaviour
+{
 
     public int lives;
     public Vector2 offset;
     Controller controller;
     SpriteRenderer spriteRenderer;
     public float invulnTimer;
-    float timer;
+    public float timer;
     float flashTimer;
+    private bool invuln;
+    public bool Invuln { get { return invuln; } }
+
+    //Shooting variables
+    private int shootTimer;
+    public int shootTimerResetValue = 30;
+    public GameObject bullet;
+    private float shootOffset = 0.135f;
+    //public GameObject target;
 
     public void Start()
     {
+        invuln = false;
         flashTimer = 0;
         timer = invulnTimer + 1;
         controller = GetComponent<Controller>();
@@ -22,18 +33,19 @@ public class ShipMovement : MonoBehaviour {
 
     public void Update()
     {
-        if(timer < invulnTimer)
+        if (timer < invulnTimer)
         {
-            flashTimer+=1;
+            invuln = true;
+            flashTimer += 1;
             //renderer.enabled = (int)(timer / Time.fixedDeltaTime) % 2 == 0;
-            if(flashTimer<5)
+            if (flashTimer < 5)
             {
                 spriteRenderer.color = Color.white;
             }
             else
             {
                 spriteRenderer.color = Color.red;
-                if(flashTimer>10)
+                if (flashTimer > 10)
                 {
                     flashTimer = 0;
                 }
@@ -43,7 +55,34 @@ public class ShipMovement : MonoBehaviour {
         {
             //renderer.enabled = true;
             spriteRenderer.color = Color.white;
+            invuln = false;
         }
+
+        //Shooting logic
+        shootTimer -= 1;
+        if (shootTimer <= 0)
+        {
+            //
+            Vector2 dir = new Vector2(0, -1);
+            fire(dir);
+
+            //spriteRenderer.color = Color.yellow;
+            shootTimer = shootTimerResetValue;
+        }
+    }
+
+    public void fire(Vector2 direction)
+    {
+        Quaternion rot = Quaternion.identity;
+
+        Vector2 lPosition = new Vector2(rigidbody2D.position.x - shootOffset, rigidbody2D.position.y);
+        Vector2 rPosition = new Vector2(rigidbody2D.position.x + shootOffset, rigidbody2D.position.y);
+
+        Bullet shell = ((GameObject)Instantiate(bullet, lPosition, rot)).GetComponent<Bullet>();
+        shell.target = direction;
+
+        shell = ((GameObject)Instantiate(bullet, rPosition, rot)).GetComponent<Bullet>();
+        shell.target = direction;
     }
 
     public void FixedUpdate()

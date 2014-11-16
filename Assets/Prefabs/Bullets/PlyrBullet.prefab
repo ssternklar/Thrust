@@ -9,14 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400002}
+  - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Ship
-  m_TagString: Player
+  m_Name: PlyrBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.00246668, y: -2.34699035, z: 0}
+  m_LocalScale: {x: .25, y: 1, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,15 +66,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85a2f59b317c0c488b58de30d5fae5e, type: 3}
+  m_Script: {fileID: 11500000, guid: aa239fe643aa7dc438c372db3c6c3511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  offset: {x: 0, y: 0}
-  invulnTimer: 1.5
-  timer: 0
-  shootTimerResetValue: 30
-  bullet: {fileID: 0}
+  target: {x: 0, y: 0}
+  controller: {fileID: 0}
+  lifeTimer: 3.5
+  timeAlive: 0
+  bulletSpeed: -8
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,20 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4756142f00a6ef4a8c1a9308e926863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eb0cbb939d92b34b8a87fcb926843ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeText: {fileID: 100000, guid: 242501ca37e838049a9cee1e2fbb6054, type: 2}
-  shipSprite: {fileID: 100000, guid: 6f56e379b546973429ad7ba933cd260d, type: 2}
+  maxSpeed: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -120,9 +105,9 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 218aca5044ad4c34da0f1cb2ce4a244f, type: 3}
-  m_Color: {r: .917647064, g: .917647064, b: .917647064, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9b6e6ac97c5c11c4e8014302d2625e5b, type: 3}
+  m_Color: {r: .996078432, g: .847058833, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
