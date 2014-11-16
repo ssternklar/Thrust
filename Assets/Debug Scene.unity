@@ -104,7 +104,7 @@ Transform:
   - {fileID: 1220516836}
   - {fileID: 1472683550}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &169438811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!1001 &482770460
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +340,7 @@ MonoBehaviour:
   lives: 3
   offset: {x: 0, y: 0}
   invulnTimer: 1.5
+  timer: 0
 --- !u!114 &622674789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &622674794
 MonoBehaviour:
   m_ObjectHideFlags: 0
