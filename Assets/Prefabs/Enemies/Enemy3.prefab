@@ -97,7 +97,7 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 98b24e4a147f5ed499033314fd2399ba, type: 2}
   target: {fileID: 0}
   timeSinceFire: 0
-  fireDelay: 350
+  fireDelay: 275
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
