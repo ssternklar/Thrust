@@ -75,7 +75,7 @@ MonoBehaviour:
   invulnTimer: 1.5
   timer: 0
   shootTimerResetValue: 30
-  bullet: {fileID: 0}
+  bullet: {fileID: 100000, guid: ee94b51655bcf54419ffd30de346152c, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
