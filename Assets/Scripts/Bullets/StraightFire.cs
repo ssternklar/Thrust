@@ -8,7 +8,7 @@ public class StraightFire : BulletPattern{
 	
 	
 	// Update is called once per frame
-	public virtual void Update () 
+	public virtual void FixedUpdate () 
     {
         if (target == null)
         {
@@ -19,6 +19,7 @@ public class StraightFire : BulletPattern{
         {
             fire(target.rigidbody2D.position - rigidbody2D.position);
             timeSinceFire = 0;
+            //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
             audio.Play();
         }
         timeSinceFire++;

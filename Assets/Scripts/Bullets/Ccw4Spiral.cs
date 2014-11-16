@@ -16,7 +16,7 @@ public class Ccw4Spiral : BulletPattern {
     public int burstPause = 60;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if(increaseAngle<10)
@@ -45,6 +45,7 @@ public class Ccw4Spiral : BulletPattern {
                 }
                 fireAngle += increment;
                 timeSinceFire = 0;
+                //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
                 audio.Play();
                 burstsFired += 1;
             }

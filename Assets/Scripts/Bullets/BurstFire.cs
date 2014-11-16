@@ -5,7 +5,7 @@ public class BurstFire : StarFire {
 
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
     {
         if (target == null)
         {
@@ -20,6 +20,7 @@ public class BurstFire : StarFire {
             base.fire(calcOffset(dir, -45f));
 
             timeSinceFire = 0;
+            //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
             audio.Play();
         }
         timeSinceFire++;
