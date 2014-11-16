@@ -23,7 +23,7 @@ public class LifeCounter : MonoBehaviour {
             livesArray.Add((GameObject)Instantiate(shipSprite));
             livesArray[i].transform.position = new Vector2(-1.5f + off, 4.75f);
             off += 0.6f;
-        }        
+        }  
     }
 
     // Update is called once per frame
