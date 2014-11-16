@@ -42,7 +42,7 @@ public class ShipMovement : MonoBehaviour {
         else
         {
             //renderer.enabled = true;
-            spriteRenderer.color = Color.cyan;
+            spriteRenderer.color = Color.white;
         }
     }
 
