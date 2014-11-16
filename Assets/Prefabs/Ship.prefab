@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.0294378251, y: -3.47056222, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb0cbb939d92b34b8a87fcb926843ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSprite: {fileID: 100000}
   lifeText: {fileID: 100000, guid: 242501ca37e838049a9cee1e2fbb6054, type: 2}
+  shipSprite: {fileID: 100000, guid: 6f56e379b546973429ad7ba933cd260d, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,8 +118,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 458f01eb2c93d8348bae8a373c50d446, type: 3}
-  m_Color: {r: 0, g: .913725495, b: .996078432, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 218aca5044ad4c34da0f1cb2ce4a244f, type: 3}
+  m_Color: {r: .917647064, g: .917647064, b: .917647064, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
