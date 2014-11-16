@@ -13,7 +13,7 @@ public class ScoreTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = "Distance Traveled: " + Mathf.Round(GameManager.SharedManager.lastScore * 100) / 100;
+        text.text = "Distance Traveled: " + Mathf.Round(GameManager.SharedManager.lastScore * 10) / 10;
 	}
 
     void FixedUpdate()

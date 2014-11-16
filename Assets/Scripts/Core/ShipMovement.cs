@@ -122,7 +122,6 @@ public class ShipMovement : MonoBehaviour {
 
     public void ResetPlayer()
     {
-        rigidbody2D.MovePosition(new Vector2(0, -3.5f));
         lives--;
         timer = 0;
         if (lives < 0)

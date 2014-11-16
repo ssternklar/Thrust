@@ -145,7 +145,7 @@ GameObject:
   - 114: {fileID: 480987897}
   m_Layer: 0
   m_Name: EnemyPlacer
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,10 +163,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 100000, guid: 3b8216b0784124d4a9caa20a99f03bf3, type: 2}
+  - {fileID: 100000, guid: 3b8216b0784124d4a9caa20a99f03bf3, type: 2}
+  - {fileID: 100000, guid: 3b8216b0784124d4a9caa20a99f03bf3, type: 2}
+  - {fileID: 100000, guid: 3b8216b0784124d4a9caa20a99f03bf3, type: 2}
+  - {fileID: 100000, guid: 6636138da76d8bb40804908d5e6dec79, type: 2}
+  - {fileID: 100000, guid: 6636138da76d8bb40804908d5e6dec79, type: 2}
   - {fileID: 100000, guid: 6636138da76d8bb40804908d5e6dec79, type: 2}
   - {fileID: 100000, guid: 7d6c622793bb3e347be7350ff22f5875, type: 2}
+  - {fileID: 100000, guid: 7d6c622793bb3e347be7350ff22f5875, type: 2}
+  - {fileID: 100000, guid: f524ab7219da16947a029c1c8149e334, type: 2}
+  stars: {fileID: 0}
   updatesPassed: 0
-  updatesNeeded: 250
+  updatesNeeded: 150
+  difficultyScale: .899999976
 --- !u!4 &480987898
 Transform:
   m_ObjectHideFlags: 0

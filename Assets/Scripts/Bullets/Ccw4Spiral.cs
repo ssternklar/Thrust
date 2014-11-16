@@ -6,13 +6,6 @@ public class Ccw4Spiral : BulletPattern {
     public float fireAngle = 0;
     public int increaseAngle = 0;
     public int increment = 5;
-    
-    //public int numberOfPoints = 4;
-    // Use this for initialization
-    void Start()
-    {
-        //increaseAngle = 360 / numberOfPoints;
-    }
 
     // Update is called once per frame
     void Update()

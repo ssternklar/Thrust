@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 42ae20a2f62d5ea458b96da86ee3c3d9, type: 2}
   target: {fileID: 0}
   timeSinceFire: 0
-  fireDelay: 120
+  fireDelay: 200
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
