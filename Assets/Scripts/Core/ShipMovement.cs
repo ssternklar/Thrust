@@ -121,7 +121,7 @@ public class ShipMovement : MonoBehaviour {
     {
         if (invulnTimer < timer)
         {
-            //ResetPlayer();
+            ResetPlayer();
         }
     }
 
