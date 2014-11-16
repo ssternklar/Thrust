@@ -6,18 +6,35 @@ public class Placer : MonoBehaviour {
     public GameObject[] objects;
     //Camera activeCamera = Camera.allCameras;
 
+    public StarfieldScrolling stars;
+
     public float updatesPassed;
     public float updatesNeeded;
+    public float difficultyScale;
 
 	// Use this for initialization
 	void Start () 
     {
-	    
+        stars = GameObject.Find("MasterStarField").GetComponent<StarfieldScrolling>();
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
     {
+        if (Time.frameCount % 1800 == 0)
+        {
+            updatesNeeded *= difficultyScale;
+            stars.Speed /= difficultyScale;
+        }
+        else if (Time.frameCount % 900 == 0)
+        {
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in objs)
+            {
+                enemy.GetComponent<BulletPattern>().fireDelay *= difficultyScale;
+            }
+        }
+
         if (updatesPassed < updatesNeeded)
         {
             updatesPassed++;
