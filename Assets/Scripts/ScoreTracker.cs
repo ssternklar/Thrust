@@ -2,22 +2,50 @@
 using System.Collections;
 
 public class ScoreTracker : MonoBehaviour {
-    GUIText text;
-    StarfieldScrolling stars;
-    // Use this for initialization
-	void Start () {
-        text = GetComponent<GUIText>();
-        stars = GameObject.Find("MasterStarField").GetComponent<StarfieldScrolling>();
-        GameManager.SharedManager.ResetScore();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        text.text = "Distance Traveled: " + Mathf.Round(GameManager.SharedManager.lastScore * 10) / 10;
-	}
 
-    void FixedUpdate()
+    public float updateInterval = 0.5F;
+
+    private float accum = 0; // FPS accumulated over the interval
+    private int frames = 0; // Frames drawn over the interval
+    private float timeleft; // Left time for current interval
+
+    void Start()
     {
-        GameManager.SharedManager.lastScore += stars.Speed;
+        if (!guiText)
+        {
+            Debug.Log("UtilityFramesPerSecond needs a GUIText component!");
+            enabled = false;
+            return;
+        }
+        timeleft = updateInterval;
     }
+
+    void Update()
+    {
+        timeleft -= Time.deltaTime;
+        accum += Time.timeScale / Time.deltaTime;
+        ++frames;
+
+        // Interval ended - update GUI text and start new interval
+        if (timeleft <= 0.0)
+        {
+            // display two fractional digits (f2 format)
+            float fps = accum / frames;
+            string format = System.String.Format("{0:F2} FPS", fps);
+            guiText.text = format;
+
+            if (fps < 30)
+                guiText.material.color = Color.yellow;
+            else
+                if (fps < 10)
+                    guiText.material.color = Color.red;
+                else
+                    guiText.material.color = Color.green;
+            //	DebugConsole.Log(format,level);
+            timeleft = updateInterval;
+            accum = 0.0F;
+            frames = 0;
+        }
+    }
+
 }
