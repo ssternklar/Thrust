@@ -19,6 +19,7 @@ public class StraightFire : BulletPattern{
         {
             fire(target.rigidbody2D.position - rigidbody2D.position);
             timeSinceFire = 0;
+            audio.Play();
         }
         timeSinceFire++;
 	}

@@ -20,6 +20,7 @@ public class BurstFire : StarFire {
             base.fire(calcOffset(dir, -45f));
 
             timeSinceFire = 0;
+            audio.Play();
         }
         timeSinceFire++;
 	}

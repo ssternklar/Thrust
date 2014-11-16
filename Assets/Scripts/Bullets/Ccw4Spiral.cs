@@ -7,6 +7,14 @@ public class Ccw4Spiral : BulletPattern {
     public int increaseAngle = 0;
     public int increment = 5;
 
+    //A timer for if we are unleashing a "burst" or not
+    private int burstTimer = 0;
+    //Shots per burst
+    private int burstNum = 3;
+    private int burstsFired = 0;
+    //time between bursts
+    public int burstPause = 60;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,18 +32,30 @@ public class Ccw4Spiral : BulletPattern {
             target = GameObject.FindWithTag("Player");
         }
 
-        if (timeSinceFire >= fireDelay)
+        burstTimer-=1;
+        if (burstTimer < 0)
         {
-            Vector2 pos = (target.rigidbody2D.position - rigidbody2D.position).normalized;
-
-            for (int i = 0; i < 360; i+= increaseAngle)
+            if (timeSinceFire >= fireDelay)
             {
-                fire(calcOffset(pos, i + fireAngle));
+                Vector2 pos = (target.rigidbody2D.position - rigidbody2D.position).normalized;
+
+                for (int i = 0; i < 360; i += increaseAngle)
+                {
+                    fire(calcOffset(pos, i + fireAngle));
+                }
+                fireAngle += increment;
+                timeSinceFire = 0;
+                audio.Play();
+                burstsFired += 1;
             }
-            fireAngle += increment;
-            timeSinceFire = 0;
+            if(burstsFired==burstNum)
+            {
+                burstTimer = burstPause;
+                burstsFired = 0;
+            }
         }
         timeSinceFire++;
+
     }
 
     public override void fire(Vector2 direction)//,Color color)
