@@ -14,13 +14,6 @@ public class ShipMovement : MonoBehaviour {
     private bool invuln;
     public bool Invuln { get { return invuln; } }
 
-    //Shooting variables
-    private int shootTimer;
-    public int shootTimerResetValue = 30;
-    public GameObject bullet;
-    private float shootOffset = 0.135f;
-    //public GameObject target;
-
     public void Start()
     {
         invuln = false;
@@ -56,32 +49,6 @@ public class ShipMovement : MonoBehaviour {
             spriteRenderer.color = Color.white;
             invuln = false;
         }
-
-        //Shooting logic
-        shootTimer -= 1;
-        if(shootTimer<=0)
-        {
-            //
-            Vector2 dir = new Vector2(0,-1);
-            fire(dir);
-
-            //spriteRenderer.color = Color.yellow;
-            shootTimer = shootTimerResetValue;
-        }
-    }
-
-    public void fire(Vector2 direction)
-    {
-        Quaternion rot = Quaternion.identity;
-
-        Vector2 lPosition = new Vector2(rigidbody2D.position.x - shootOffset, rigidbody2D.position.y);
-        Vector2 rPosition = new Vector2(rigidbody2D.position.x + shootOffset, rigidbody2D.position.y);
-
-        Bullet shell = ((GameObject)Instantiate(bullet, lPosition, rot)).GetComponent<Bullet>();
-        shell.target = direction;
-
-        shell = ((GameObject)Instantiate(bullet, rPosition, rot)).GetComponent<Bullet>();
-        shell.target = direction;
     }
 
     public void FixedUpdate()
