@@ -7,7 +7,14 @@ public abstract class BulletPattern : MonoBehaviour {
 
     public float timeSinceFire = 0;
     public float fireDelay;
-    
+
+
+    void Start()
+    {
+        timeSinceFire = Random.Range(0, fireDelay);
+        float percent = fireDelay *.1f;
+        fireDelay += Random.Range(-percent, percent);
+    }
     public void Update()
     {
         //fire();
