@@ -30,5 +30,19 @@ public class LifeCounter : MonoBehaviour {
     void Update()
     {
         lifeText.guiText.text = "Lives: ";
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (livesArray.Count > 0)
+        {
+            if (!sMovement.Invuln)
+            {
+                GameObject obj = livesArray[livesArray.Count - 1];
+                livesArray.RemoveAt(livesArray.Count - 1);
+                Destroy(obj);
+            }
+        }
     }
 }

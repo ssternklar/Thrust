@@ -9,11 +9,14 @@ public class ShipMovement : MonoBehaviour {
     Controller controller;
     SpriteRenderer spriteRenderer;
     public float invulnTimer;
-    float timer;
+    public float timer;
     float flashTimer;
+    private bool invuln;
+    public bool Invuln { get { return invuln; } }
 
     public void Start()
     {
+        invuln = false;
         flashTimer = 0;
         timer = invulnTimer + 1;
         controller = GetComponent<Controller>();
@@ -24,6 +27,7 @@ public class ShipMovement : MonoBehaviour {
     {
         if(timer < invulnTimer)
         {
+            invuln = true;
             flashTimer+=1;
             //renderer.enabled = (int)(timer / Time.fixedDeltaTime) % 2 == 0;
             if(flashTimer<5)
@@ -43,6 +47,7 @@ public class ShipMovement : MonoBehaviour {
         {
             //renderer.enabled = true;
             spriteRenderer.color = Color.white;
+            invuln = false;
         }
     }
 
