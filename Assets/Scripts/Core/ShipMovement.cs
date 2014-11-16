@@ -131,7 +131,7 @@ public class ShipMovement : MonoBehaviour {
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
         for (int i = 0; i < bullets.Length; i++)
         {
-            Destroy(bullets[i]);
+            GameManager.SharedManager.ReturnBullet(bullets[i]);
         }
     }
 }

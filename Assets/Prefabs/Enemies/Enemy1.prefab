@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 100000, guid: a1281227d3d5de94c92b76c564c447d4, type: 2}
   target: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 127e1c60044547d4a918663cbdf7fdd7, type: 3}
   timeSinceFire: 0
   fireDelay: 125
   speed: 0

@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour {
 
         if (timeAlive >= lifeTimer)
         {
-            controller.Die();
+            GameManager.SharedManager.ReturnBullet(gameObject);
         }
         timeAlive += Time.deltaTime;
 	}
