@@ -7,15 +7,23 @@ public class Placer : MonoBehaviour {
     //Camera activeCamera = Camera.allCameras;
 
     public StarfieldScrolling stars;
+    public GUIText text;
+    public Controller controller;
 
     public float updatesPassed;
     public float updatesNeeded;
     public float difficultyScale;
 
+    public bool difficult;
+    public float difficultTime;
+    public float maxHardTime;
+
 	// Use this for initialization
 	void Start () 
     {
         stars = GameObject.Find("MasterStarField").GetComponent<StarfieldScrolling>();
+        text = GetComponent<GUIText>();
+        controller = GetComponent<Controller>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +33,7 @@ public class Placer : MonoBehaviour {
         {
             updatesNeeded *= difficultyScale;
             stars.Speed /= difficultyScale;
+            difficult = true;
         }
         else if (Time.frameCount % 900 == 0)
         {
@@ -37,6 +46,23 @@ public class Placer : MonoBehaviour {
                     enemy.GetComponent<BulletPattern>().fireDelay *= difficultyScale;
                 }
             }
+        }
+
+        if (difficult && difficultTime < maxHardTime)
+        {
+            text.enabled = true;
+            difficultTime += Time.deltaTime;
+            controller.Translate(new Vector2(0, ((float)(1 / maxHardTime)) * Time.fixedDeltaTime));
+        }
+        else
+        {
+            text.enabled = false;
+            difficultTime = 0;
+            if (difficult)
+            {
+                controller.Translate(new Vector2(0, -1f));
+            }
+            difficult = false;
         }
 
         if (updatesPassed < updatesNeeded)

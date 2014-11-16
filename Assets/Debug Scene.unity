@@ -203,6 +203,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 480987898}
   - 114: {fileID: 480987897}
+  - 132: {fileID: 480987899}
+  - 50: {fileID: 480987902}
+  - 212: {fileID: 480987901}
+  - 114: {fileID: 480987900}
   m_Layer: 0
   m_Name: EnemyPlacer
   m_TagString: Respawn
@@ -233,9 +237,14 @@ MonoBehaviour:
   - {fileID: 100000, guid: 7d6c622793bb3e347be7350ff22f5875, type: 2}
   - {fileID: 100000, guid: f524ab7219da16947a029c1c8149e334, type: 2}
   stars: {fileID: 0}
+  text: {fileID: 0}
+  controller: {fileID: 0}
   updatesPassed: 0
   updatesNeeded: 150
   difficultyScale: .899999976
+  difficult: 0
+  difficultTime: 0
+  maxHardTime: 1
 --- !u!4 &480987898
 Transform:
   m_ObjectHideFlags: 0
@@ -243,11 +252,83 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 480987896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .360000014, y: .75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!132 &480987899
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480987896}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Text: Difficulty Up!
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 18
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4281045195
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!114 &480987900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480987896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4756142f00a6ef4a8c1a9308e926863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+--- !u!212 &480987901
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480987896}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!50 &480987902
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480987896}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &482770460
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,6 +421,7 @@ MonoBehaviour:
   lives: 3
   offset: {x: 0, y: 0}
   invulnTimer: 1.5
+  timer: 0
 --- !u!114 &622674789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +864,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2011451448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0500000007, y: .899999976, z: 0}
+  m_LocalPosition: {x: .0500000007, y: .935000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
