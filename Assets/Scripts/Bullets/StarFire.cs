@@ -26,6 +26,7 @@ public class StarFire : BulletPattern {
             fire(-sides);
 
             timeSinceFire = 0;
+            audio.Play();
         }
         timeSinceFire++;
     }

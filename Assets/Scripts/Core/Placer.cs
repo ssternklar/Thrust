@@ -29,9 +29,13 @@ public class Placer : MonoBehaviour {
         else if (Time.frameCount % 900 == 0)
         {
             GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject enemy in objs)
+
+            if (objs != null)
             {
-                enemy.GetComponent<BulletPattern>().fireDelay *= difficultyScale;
+                foreach (GameObject enemy in objs)
+                {
+                    enemy.GetComponent<BulletPattern>().fireDelay *= difficultyScale;
+                }
             }
         }
 

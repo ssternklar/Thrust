@@ -177,6 +177,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
+      propertyPath: m_Color.r
+      value: .996078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
+      propertyPath: m_Color.g
+      value: .996078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
+      propertyPath: m_Color.b
+      value: .996078432
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
   m_RootGameObject: {fileID: 622674787}
@@ -391,7 +403,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 218aca5044ad4c34da0f1cb2ce4a244f, type: 3}
-  m_Color: {r: .917647064, g: .917647064, b: .917647064, a: 1}
+  m_Color: {r: .996078432, g: .996078432, b: .996078432, a: 1}
 --- !u!4 &622674793
 Transform:
   m_ObjectHideFlags: 0

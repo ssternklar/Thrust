@@ -34,6 +34,7 @@ public class Ccw4Spiral : BulletPattern {
             }
             fireAngle += increment;
             timeSinceFire = 0;
+            audio.Play();
         }
         timeSinceFire++;
     }
