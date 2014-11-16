@@ -26,6 +26,7 @@ public class StarFire : BulletPattern {
             fire(-sides);
 
             timeSinceFire = 0;
+            //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
             audio.Play();
         }
         timeSinceFire++;
