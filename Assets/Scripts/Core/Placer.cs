@@ -53,6 +53,7 @@ public class Placer : MonoBehaviour {
             text.enabled = true;
             difficultTime += Time.deltaTime;
             controller.Translate(new Vector2(0, ((float)(1 / maxHardTime)) * Time.fixedDeltaTime));
+            audio.Play();
         }
         else
         {
