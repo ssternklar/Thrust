@@ -1,7 +1,8 @@
-Imagine-Cup-Game
+Thrust
 ================
+Thrust
 
-Imagine Cup Game
+This game is "Free as in Freedom"
 
 LICENCE:
 
