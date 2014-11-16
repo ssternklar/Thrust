@@ -132,10 +132,11 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 9950b958a1da77441a21010081c5b549, type: 2}
   target: {fileID: 100000, guid: 5d3980a544eba9a46a8f443b0673872c, type: 2}
   timeSinceFire: 0
-  fireDelay: 55
+  fireDelay: 8
   fireAngle: 0
   increaseAngle: 45
   increment: 10
+  burstPause: 80
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
