@@ -8,7 +8,7 @@ public class StraightFire : BulletPattern{
 	
 	
 	// Update is called once per frame
-	public virtual void Update () 
+	public virtual void FixedUpdate () 
     {
         if (target == null)
         {

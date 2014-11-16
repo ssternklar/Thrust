@@ -235,7 +235,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: 6636138da76d8bb40804908d5e6dec79, type: 2}
   - {fileID: 100000, guid: 7d6c622793bb3e347be7350ff22f5875, type: 2}
   - {fileID: 100000, guid: 7d6c622793bb3e347be7350ff22f5875, type: 2}
-  - {fileID: 100000, guid: f524ab7219da16947a029c1c8149e334, type: 2}
   stars: {fileID: 0}
   text: {fileID: 0}
   controller: {fileID: 0}

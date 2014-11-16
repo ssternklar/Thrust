@@ -16,7 +16,7 @@ public class Ccw4Spiral : BulletPattern {
     public int burstPause = 60;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if(increaseAngle<10)
