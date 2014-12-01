@@ -4,6 +4,10 @@ Thrust
 
 This game is "Free as in Freedom"
 
+# Play
+You can play Thrust in your web browser! Just open up this link to
+our [Thrust Github.IO Page!](https://ssternklar.github.io/Thrust)
+
 # LICENSE
 
 The MIT License (MIT)
