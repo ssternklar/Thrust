@@ -4,7 +4,7 @@ Thrust
 
 This game is "Free as in Freedom"
 
-LICENCE:
+# LICENSE
 
 The MIT License (MIT)
 
