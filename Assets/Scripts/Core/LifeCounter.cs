@@ -14,7 +14,7 @@ public class LifeCounter : MonoBehaviour {
     {        
         sMovement = GetComponent<ShipMovement>();
         lifeText = GameObject.Find("GUI Text");
-        lifeText.guiText.text = "Lives: ";
+        lifeText.GetComponent<GUIText>().text = "Lives: ";
         livesArray = new List<GameObject>();
 
         float off = 0;        
@@ -29,7 +29,7 @@ public class LifeCounter : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        lifeText.guiText.text = "Lives: ";
+        lifeText.GetComponent<GUIText>().text = "Lives: ";
 
     }
 

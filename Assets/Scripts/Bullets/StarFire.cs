@@ -14,7 +14,7 @@ public class StarFire : BulletPattern {
 
         if (timeSinceFire >= fireDelay)
         {
-            Vector2 pos = (target.rigidbody2D.position - rigidbody2D.position).normalized;
+            Vector2 pos = (target.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position).normalized;
             fire(pos);
             fire(-pos);
             fire(calcOffset(pos, 45f));
@@ -27,7 +27,7 @@ public class StarFire : BulletPattern {
 
             timeSinceFire = 0;
             //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
-            audio.Play();
+            GetComponent<AudioSource>().Play();
         }
         timeSinceFire++;
     }
@@ -35,7 +35,7 @@ public class StarFire : BulletPattern {
     public override void fire(Vector2 direction)
     {
         Quaternion rot = Quaternion.identity;
-        Bullet shell = ((GameObject)Instantiate(bullet, rigidbody2D.position, rot)).GetComponent<Bullet>();
+        Bullet shell = ((GameObject)Instantiate(bullet, GetComponent<Rigidbody2D>().position, rot)).GetComponent<Bullet>();
         shell.target = direction;
     }
 

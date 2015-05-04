@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         controller.Translate(-velocity);
 
-        if (rigidbody2D.position.y < -GameManager.SharedManager.screenHeight)
+        if (GetComponent<Rigidbody2D>().position.y < -GameManager.SharedManager.screenHeight)
         {
             controller.Die();
         }

@@ -5,7 +5,7 @@ public class EndScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        guiText.text = (Mathf.Round(GameManager.SharedManager.lastScore * 100) / 100).ToString();
+        GetComponent<GUIText>().text = (Mathf.Round(GameManager.SharedManager.lastScore * 100) / 100).ToString();
 	}
 	
 	// Update is called once per frame

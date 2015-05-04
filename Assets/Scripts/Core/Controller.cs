@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour {
 	//Translates by "velocity" amount
 	public virtual void Translate(Vector2 velocity)
 	{
-		rigidbody2D.MovePosition((rigidbody2D.position + velocity * Time.fixedDeltaTime));
+		GetComponent<Rigidbody2D>().MovePosition((GetComponent<Rigidbody2D>().position + velocity * Time.fixedDeltaTime));
 	}
 	
 	/// <summary>
@@ -39,14 +39,14 @@ public class Controller : MonoBehaviour {
 	/// <param name="position">Thing to set position to</param>
 	public virtual void MovePosition(Vector2 position)
 	{
-        Vector2 translation = position - rigidbody2D.position;
+        Vector2 translation = position - GetComponent<Rigidbody2D>().position;
         if(translation.magnitude > maxSpeed * Time.fixedDeltaTime)
         {
             Translate(translation.normalized * maxSpeed);
         }
         else
         {
-            rigidbody2D.MovePosition(position);
+            GetComponent<Rigidbody2D>().MovePosition(position);
         }
 	}
 

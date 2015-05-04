@@ -37,7 +37,7 @@ public class Ccw4Spiral : BulletPattern {
         {
             if (timeSinceFire >= fireDelay)
             {
-                Vector2 pos = (target.rigidbody2D.position - rigidbody2D.position).normalized;
+                Vector2 pos = (target.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position).normalized;
 
                 for (int i = 0; i < 360; i += increaseAngle)
                 {
@@ -46,7 +46,7 @@ public class Ccw4Spiral : BulletPattern {
                 fireAngle += increment;
                 timeSinceFire = 0;
                 //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
-                audio.Play();
+                GetComponent<AudioSource>().Play();
                 burstsFired += 1;
             }
             if(burstsFired==burstNum)
@@ -62,7 +62,7 @@ public class Ccw4Spiral : BulletPattern {
     public override void fire(Vector2 direction)//,Color color)
     {
         Quaternion rot = Quaternion.identity;
-        Bullet shell = ((GameObject)Instantiate(bullet, rigidbody2D.position, rot)).GetComponent<Bullet>();
+        Bullet shell = ((GameObject)Instantiate(bullet, GetComponent<Rigidbody2D>().position, rot)).GetComponent<Bullet>();
         shell.target = direction;
     }
 }

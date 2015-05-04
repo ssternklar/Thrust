@@ -14,14 +14,14 @@ public class BurstFire : StarFire {
 
         if (timeSinceFire >= fireDelay)
         {
-            Vector2 dir = (target.rigidbody2D.position - rigidbody2D.position).normalized;
+            Vector2 dir = (target.GetComponent<Rigidbody2D>().position - GetComponent<Rigidbody2D>().position).normalized;
             base.fire(dir);
             base.fire(calcOffset(dir, 45f));
             base.fire(calcOffset(dir, -45f));
 
             timeSinceFire = 0;
             //I found the sound here: https://www.freesound.org/people/jobro/sounds/35474/
-            audio.Play();
+            GetComponent<AudioSource>().Play();
         }
         timeSinceFire++;
 	}
